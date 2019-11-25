@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DemoDS.ViewModels"
+             mc:Ignorable="d"
+             x:Class="DemoDS.Views.LocationView">
+
+    <ContentPage.BindingContext>
+        <vm:LocationViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                    Text="Get Address" Command="{Binding GetAddressCommand}"
+                    CornerRadius="8"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Name: "/>
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding LocationAddress.Name}"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Address: "/>
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding LocationAddress.Address}" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="Province: "/>
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding LocationAddress.Province}" />
+
+            <Label Grid.Row="4" Grid.Column="0" Text="City: "/>
+            <Label Grid.Row="4" Grid.Column="1" Text="{Binding LocationAddress.City}" />
+
+            <Label Grid.Row="5" Grid.Column="0" Text="Zip Code: "/>
+            <Label Grid.Row="5" Grid.Column="1" Text="{Binding LocationAddress.ZipCode}" />
+
+            <Label Grid.Row="6" Grid.Column="0" Text="Country: "/>
+            <Label Grid.Row="6" Grid.Column="1" Text="{Binding LocationAddress.Country}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
